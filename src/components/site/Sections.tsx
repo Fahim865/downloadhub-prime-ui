@@ -16,9 +16,10 @@ import {
   Zap,
 } from "lucide-react";
 import { useState } from "react";
+import { Reveal, useGlowTracking } from "./motion-kit";
 import devices from "@/assets/devices-mockup.png";
 
-function SectionHead({
+export function SectionHead({
   eyebrow,
   title,
   desc,
@@ -48,16 +49,36 @@ const services = [
 ];
 
 const features = [
-  { icon: Zap, title: "Fast processing", desc: "Distributed workers finish most jobs in under 6 seconds." },
-  { icon: Lock, title: "Secure by default", desc: "TLS 1.3 end to end and files purged automatically." },
-  { icon: Film, title: "HD & 4K quality", desc: "Original bitrate preserved — never re-compressed." },
+  {
+    icon: Zap,
+    title: "Fast processing",
+    desc: "Distributed workers finish most jobs in under 6 seconds.",
+  },
+  {
+    icon: Lock,
+    title: "Secure by default",
+    desc: "TLS 1.3 end to end and files purged automatically.",
+  },
+  {
+    icon: Film,
+    title: "HD & 4K quality",
+    desc: "Original bitrate preserved — never re-compressed.",
+  },
   { icon: Cloud, title: "Cloud based", desc: "Queue in the browser, pick it up on any device." },
-  { icon: MonitorSmartphone, title: "Mobile friendly", desc: "A full-power interface that fits your thumb." },
+  {
+    icon: MonitorSmartphone,
+    title: "Mobile friendly",
+    desc: "A full-power interface that fits your thumb.",
+  },
   { icon: Gauge, title: "No installation", desc: "Nothing to download to download. Just a link." },
 ];
 
 const steps = [
-  { n: "01", title: "Paste link", desc: "Drop any URL into the field. We detect the source instantly." },
+  {
+    n: "01",
+    title: "Paste link",
+    desc: "Drop any URL into the field. We detect the source instantly.",
+  },
   { n: "02", title: "Process", desc: "Our cloud fetches, converts and optimises in real time." },
   { n: "03", title: "Download", desc: "Grab your file in the format and quality you picked." },
 ];
@@ -110,26 +131,31 @@ const faqs = [
 ];
 
 export function Services() {
+  const glow = useGlowTracking();
   return (
     <section id="services" className="px-5 py-24 sm:px-8">
       <div className="mx-auto max-w-7xl">
-        <SectionHead
-          eyebrow="Supported services"
-          title="One hub for every source"
-          desc="Over 1,000 platforms supported and growing weekly — all through the same clean interface."
-        />
+        <Reveal>
+          <SectionHead
+            eyebrow="Supported services"
+            title="One hub for every source"
+            desc="Over 1,000 platforms supported and growing weekly — all through the same clean interface."
+          />
+        </Reveal>
         <ul className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s) => (
-            <li
-              key={s.name}
-              className="card-hover rounded-3xl border border-border bg-card p-7 shadow-soft"
-            >
-              <span className="grid h-12 w-12 place-items-center rounded-2xl bg-primary/10 text-primary">
-                <s.icon className="h-6 w-6" />
-              </span>
-              <h3 className="mt-5 text-lg font-semibold">{s.name}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
-            </li>
+          {services.map((s, i) => (
+            <Reveal as="li" key={s.name} delay={i * 0.06} className="h-full">
+              <div
+                onMouseMove={glow}
+                className="glow-card gradient-border h-full rounded-3xl p-7 shadow-soft"
+              >
+                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-primary/10 text-primary">
+                  <s.icon className="h-6 w-6" />
+                </span>
+                <h3 className="mt-5 text-lg font-semibold">{s.name}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+              </div>
+            </Reveal>
           ))}
         </ul>
       </div>
@@ -138,30 +164,35 @@ export function Services() {
 }
 
 export function Features() {
+  const glow = useGlowTracking();
   return (
     <section id="features" className="px-5 py-24 sm:px-8">
       <div className="mx-auto max-w-7xl">
-        <SectionHead
-          eyebrow="Features"
-          title="Built for people who download a lot"
-          desc="Every detail tuned for speed, quality and privacy — without a settings maze."
-        />
+        <Reveal>
+          <SectionHead
+            eyebrow="Features"
+            title="Built for people who download a lot"
+            desc="Every detail tuned for speed, quality and privacy — without a settings maze."
+          />
+        </Reveal>
         <ul className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((f) => (
-            <li
-              key={f.title}
-              className="card-hover group relative overflow-hidden rounded-3xl border border-border bg-card p-8 shadow-soft"
-            >
-              <span
-                aria-hidden
-                className="absolute -top-16 -right-16 h-40 w-40 rounded-full bg-brand-gradient opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-20"
-              />
-              <span className="grid h-12 w-12 place-items-center rounded-2xl bg-brand-gradient text-primary-foreground shadow-lift">
-                <f.icon className="h-6 w-6" />
-              </span>
-              <h3 className="mt-6 text-lg font-semibold">{f.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.desc}</p>
-            </li>
+          {features.map((f, i) => (
+            <Reveal as="li" key={f.title} delay={i * 0.06} className="h-full">
+              <div
+                onMouseMove={glow}
+                className="glow-card group relative h-full overflow-hidden rounded-3xl border border-border bg-card p-8 shadow-soft"
+              >
+                <span
+                  aria-hidden
+                  className="absolute -top-16 -right-16 h-40 w-40 rounded-full bg-brand-gradient opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-20"
+                />
+                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-brand-gradient text-primary-foreground shadow-lift">
+                  <f.icon className="h-6 w-6" />
+                </span>
+                <h3 className="mt-6 text-lg font-semibold">{f.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.desc}</p>
+              </div>
+            </Reveal>
           ))}
         </ul>
       </div>
@@ -173,11 +204,13 @@ export function HowItWorks() {
   return (
     <section id="how" className="px-5 py-24 sm:px-8">
       <div className="mx-auto max-w-7xl">
-        <SectionHead
-          eyebrow="How it works"
-          title="Three steps, six seconds"
-          desc="No accounts, no plugins, no waiting rooms. Just the shortest path from link to file."
-        />
+        <Reveal>
+          <SectionHead
+            eyebrow="How it works"
+            title="Three steps, six seconds"
+            desc="No accounts, no plugins, no waiting rooms. Just the shortest path from link to file."
+          />
+        </Reveal>
         <ol className="relative mt-16 grid gap-8 md:grid-cols-3">
           <span
             aria-hidden
@@ -260,13 +293,15 @@ export function Benefits() {
 
 export function Testimonials() {
   return (
-    <section id="blog" className="px-5 py-24 sm:px-8">
+    <section id="testimonials" className="px-5 py-24 sm:px-8">
       <div className="mx-auto max-w-7xl">
-        <SectionHead
-          eyebrow="Testimonials"
-          title="Loved by creators and teams"
-          desc="Over two million people trust DownloadHub with their daily workflow."
-        />
+        <Reveal>
+          <SectionHead
+            eyebrow="Testimonials"
+            title="Loved by creators and teams"
+            desc="Over two million people trust DownloadHub with their daily workflow."
+          />
+        </Reveal>
         <ul className="mt-14 grid gap-5 lg:grid-cols-3">
           {testimonials.map((t) => (
             <li
@@ -301,11 +336,13 @@ export function Faq() {
   return (
     <section id="faq" className="px-5 py-24 sm:px-8">
       <div className="mx-auto max-w-3xl">
-        <SectionHead
-          eyebrow="FAQ"
-          title="Questions, answered"
-          desc="Everything you might want to know before your first download."
-        />
+        <Reveal>
+          <SectionHead
+            eyebrow="FAQ"
+            title="Questions, answered"
+            desc="Everything you might want to know before your first download."
+          />
+        </Reveal>
         <ul className="mt-12 grid gap-3">
           {faqs.map((f, i) => {
             const isOpen = open === i;
@@ -335,9 +372,7 @@ export function Faq() {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <p className="px-6 pb-5 text-sm leading-relaxed text-muted-foreground">
-                      {f.a}
-                    </p>
+                    <p className="px-6 pb-5 text-sm leading-relaxed text-muted-foreground">{f.a}</p>
                   </div>
                 </div>
               </li>

@@ -4,6 +4,7 @@ import { Download, Globe, Menu, Moon, Sun, X } from "lucide-react";
 const links = [
   { label: "Home", href: "#home" },
   { label: "Features", href: "#features" },
+  { label: "Pricing", href: "#pricing" },
   { label: "FAQ", href: "#faq" },
   { label: "Blog", href: "#blog" },
   { label: "Contact", href: "#contact" },

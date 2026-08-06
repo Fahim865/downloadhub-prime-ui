@@ -1,10 +1,23 @@
 import { Download, Facebook, Github, Instagram, Linkedin, Twitter } from "lucide-react";
 
 const columns = [
-  { title: "Quick links", items: ["Home", "Features", "How it works", "Pricing", "Blog"] },
-  { title: "Resources", items: ["Documentation", "API reference", "Changelog", "Status", "Guides"] },
-  { title: "Support", items: ["Help center", "Contact us", "Report a bug", "Community", "Feedback"] },
-  { title: "Legal", items: ["Terms of service", "Privacy policy", "Cookie policy", "DMCA", "Licenses"] },
+  {
+    title: "Product",
+    items: ["Home", "Features", "How it works", "Pricing", "Download history", "Blog"],
+  },
+  {
+    title: "Resources",
+    items: ["Documentation", "API reference", "Changelog", "Status page", "Guides", "Integrations"],
+  },
+  { title: "Company", items: ["About us", "Careers", "Press kit", "Partners", "Contact"] },
+  {
+    title: "Support",
+    items: ["Help center", "Report a bug", "Community", "Feedback", "Service status"],
+  },
+  {
+    title: "Legal",
+    items: ["Terms of service", "Privacy policy", "Cookie policy", "DMCA", "Licenses", "GDPR"],
+  },
 ];
 
 const socials = [Twitter, Instagram, Facebook, Linkedin, Github];
@@ -13,7 +26,7 @@ export function Footer() {
   return (
     <footer className="bg-footer px-5 pt-20 pb-10 text-footer-foreground sm:px-8">
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-12 lg:grid-cols-[1.4fr_2.6fr]">
+        <div className="grid gap-12 lg:grid-cols-[1.2fr_2.8fr]">
           <div>
             <a href="#home" className="flex items-center gap-2.5">
               <span className="grid h-10 w-10 place-items-center rounded-2xl bg-brand-gradient">
@@ -48,7 +61,7 @@ export function Footer() {
             </form>
           </div>
 
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5">
             {columns.map((col) => (
               <nav key={col.title} aria-label={col.title}>
                 <h3 className="text-sm font-semibold text-footer-foreground">{col.title}</h3>
@@ -69,9 +82,23 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-8 sm:flex-row">
+        <div className="mt-14 grid gap-6 rounded-3xl border border-white/10 bg-white/5 p-6 sm:grid-cols-3">
+          {[
+            { k: "Uptime", v: "99.99%" },
+            { k: "Files processed", v: "180M+" },
+            { k: "Avg. delivery", v: "6 seconds" },
+          ].map((x) => (
+            <div key={x.k}>
+              <p className="font-display text-2xl font-semibold">{x.v}</p>
+              <p className="mt-1 text-xs text-footer-muted">{x.k}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-10 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-8 sm:flex-row">
           <p className="text-xs text-footer-muted">
-            © {new Date().getFullYear()} DownloadHub. All rights reserved.
+            © {new Date().getFullYear()} DownloadHub. All rights reserved. · Made for people who
+            download a lot.
           </p>
           <ul className="flex items-center gap-3">
             {socials.map((Icon, i) => (

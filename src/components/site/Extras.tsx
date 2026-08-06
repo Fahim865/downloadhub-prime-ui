@@ -1,4 +1,13 @@
-import { ArrowUpRight, Check, Clock, Download, FileAudio, FileVideo, Image as ImageIcon, Sparkles } from "lucide-react";
+import {
+  ArrowUpRight,
+  Check,
+  Clock,
+  Download,
+  FileAudio,
+  FileVideo,
+  Image as ImageIcon,
+  Sparkles,
+} from "lucide-react";
 import { useEffect, useState } from "react";
 import { Reveal, useGlowTracking } from "./motion-kit";
 import { SectionHead } from "./Sections";
@@ -41,7 +50,8 @@ const posts = [
   {
     tag: "Guide",
     title: "How to download 4K video without losing quality",
-    excerpt: "Bitrate, containers and codecs explained in plain language — plus the settings we use.",
+    excerpt:
+      "Bitrate, containers and codecs explained in plain language — plus the settings we use.",
     read: "6 min read",
   },
   {
@@ -83,9 +93,7 @@ export function Pricing() {
               <div
                 onMouseMove={glow}
                 className={`glow-card h-full rounded-3xl p-8 shadow-soft ${
-                  p.highlight
-                    ? "gradient-border shadow-glow"
-                    : "border border-border bg-card"
+                  p.highlight ? "gradient-border shadow-glow" : "border border-border bg-card"
                 }`}
               >
                 <div className="flex items-center justify-between gap-3">

@@ -49,16 +49,36 @@ const services = [
 ];
 
 const features = [
-  { icon: Zap, title: "Fast processing", desc: "Distributed workers finish most jobs in under 6 seconds." },
-  { icon: Lock, title: "Secure by default", desc: "TLS 1.3 end to end and files purged automatically." },
-  { icon: Film, title: "HD & 4K quality", desc: "Original bitrate preserved — never re-compressed." },
+  {
+    icon: Zap,
+    title: "Fast processing",
+    desc: "Distributed workers finish most jobs in under 6 seconds.",
+  },
+  {
+    icon: Lock,
+    title: "Secure by default",
+    desc: "TLS 1.3 end to end and files purged automatically.",
+  },
+  {
+    icon: Film,
+    title: "HD & 4K quality",
+    desc: "Original bitrate preserved — never re-compressed.",
+  },
   { icon: Cloud, title: "Cloud based", desc: "Queue in the browser, pick it up on any device." },
-  { icon: MonitorSmartphone, title: "Mobile friendly", desc: "A full-power interface that fits your thumb." },
+  {
+    icon: MonitorSmartphone,
+    title: "Mobile friendly",
+    desc: "A full-power interface that fits your thumb.",
+  },
   { icon: Gauge, title: "No installation", desc: "Nothing to download to download. Just a link." },
 ];
 
 const steps = [
-  { n: "01", title: "Paste link", desc: "Drop any URL into the field. We detect the source instantly." },
+  {
+    n: "01",
+    title: "Paste link",
+    desc: "Drop any URL into the field. We detect the source instantly.",
+  },
   { n: "02", title: "Process", desc: "Our cloud fetches, converts and optimises in real time." },
   { n: "03", title: "Download", desc: "Grab your file in the format and quality you picked." },
 ];
@@ -117,9 +137,9 @@ export function Services() {
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <SectionHead
-          eyebrow="Supported services"
-          title="One hub for every source"
-          desc="Over 1,000 platforms supported and growing weekly — all through the same clean interface."
+            eyebrow="Supported services"
+            title="One hub for every source"
+            desc="Over 1,000 platforms supported and growing weekly — all through the same clean interface."
           />
         </Reveal>
         <ul className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -129,9 +149,9 @@ export function Services() {
                 onMouseMove={glow}
                 className="glow-card gradient-border h-full rounded-3xl p-7 shadow-soft"
               >
-              <span className="grid h-12 w-12 place-items-center rounded-2xl bg-primary/10 text-primary">
-                <s.icon className="h-6 w-6" />
-              </span>
+                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-primary/10 text-primary">
+                  <s.icon className="h-6 w-6" />
+                </span>
                 <h3 className="mt-5 text-lg font-semibold">{s.name}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
               </div>
@@ -150,9 +170,9 @@ export function Features() {
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <SectionHead
-          eyebrow="Features"
-          title="Built for people who download a lot"
-          desc="Every detail tuned for speed, quality and privacy — without a settings maze."
+            eyebrow="Features"
+            title="Built for people who download a lot"
+            desc="Every detail tuned for speed, quality and privacy — without a settings maze."
           />
         </Reveal>
         <ul className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -163,12 +183,12 @@ export function Features() {
                 className="glow-card group relative h-full overflow-hidden rounded-3xl border border-border bg-card p-8 shadow-soft"
               >
                 <span
-                aria-hidden
-                className="absolute -top-16 -right-16 h-40 w-40 rounded-full bg-brand-gradient opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-20"
-              />
-              <span className="grid h-12 w-12 place-items-center rounded-2xl bg-brand-gradient text-primary-foreground shadow-lift">
-                <f.icon className="h-6 w-6" />
-              </span>
+                  aria-hidden
+                  className="absolute -top-16 -right-16 h-40 w-40 rounded-full bg-brand-gradient opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-20"
+                />
+                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-brand-gradient text-primary-foreground shadow-lift">
+                  <f.icon className="h-6 w-6" />
+                </span>
                 <h3 className="mt-6 text-lg font-semibold">{f.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.desc}</p>
               </div>
@@ -186,9 +206,9 @@ export function HowItWorks() {
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <SectionHead
-          eyebrow="How it works"
-          title="Three steps, six seconds"
-          desc="No accounts, no plugins, no waiting rooms. Just the shortest path from link to file."
+            eyebrow="How it works"
+            title="Three steps, six seconds"
+            desc="No accounts, no plugins, no waiting rooms. Just the shortest path from link to file."
           />
         </Reveal>
         <ol className="relative mt-16 grid gap-8 md:grid-cols-3">
@@ -277,9 +297,9 @@ export function Testimonials() {
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <SectionHead
-          eyebrow="Testimonials"
-          title="Loved by creators and teams"
-          desc="Over two million people trust DownloadHub with their daily workflow."
+            eyebrow="Testimonials"
+            title="Loved by creators and teams"
+            desc="Over two million people trust DownloadHub with their daily workflow."
           />
         </Reveal>
         <ul className="mt-14 grid gap-5 lg:grid-cols-3">
@@ -318,9 +338,9 @@ export function Faq() {
       <div className="mx-auto max-w-3xl">
         <Reveal>
           <SectionHead
-          eyebrow="FAQ"
-          title="Questions, answered"
-          desc="Everything you might want to know before your first download."
+            eyebrow="FAQ"
+            title="Questions, answered"
+            desc="Everything you might want to know before your first download."
           />
         </Reveal>
         <ul className="mt-12 grid gap-3">
@@ -352,9 +372,7 @@ export function Faq() {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <p className="px-6 pb-5 text-sm leading-relaxed text-muted-foreground">
-                      {f.a}
-                    </p>
+                    <p className="px-6 pb-5 text-sm leading-relaxed text-muted-foreground">{f.a}</p>
                   </div>
                 </div>
               </li>

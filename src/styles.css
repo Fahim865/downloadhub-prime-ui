@@ -81,10 +81,11 @@
     color-mix(in oklab, var(--secondary) 16%, transparent),
     transparent
   );
-  --shadow-soft: 0 1px 2px oklch(0.208 0.042 265.755 / 0.04),
-    0 12px 32px -12px oklch(0.208 0.042 265.755 / 0.14);
+  --shadow-soft:
+    0 1px 2px oklch(0.208 0.042 265.755 / 0.04), 0 12px 32px -12px oklch(0.208 0.042 265.755 / 0.14);
   --shadow-lift: 0 24px 60px -24px oklch(0.546 0.215 262.88 / 0.4);
-  --shadow-glow: 0 0 0 1px color-mix(in oklab, var(--primary) 12%, transparent),
+  --shadow-glow:
+    0 0 0 1px color-mix(in oklab, var(--primary) 12%, transparent),
     0 30px 80px -30px oklch(0.546 0.215 262.88 / 0.55);
 }
 

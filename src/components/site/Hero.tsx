@@ -56,8 +56,8 @@ export function Hero() {
           </h1>
 
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            DownloadHub turns any link into a clean, high-quality file — video, audio, or document
-            — processed in the cloud and delivered in seconds. No apps, no ads, no limits.
+            DownloadHub turns any link into a clean, high-quality file — video, audio, or document —
+            processed in the cloud and delivered in seconds. No apps, no ads, no limits.
           </p>
 
           {/* Premium download box */}

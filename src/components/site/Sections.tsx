@@ -273,7 +273,7 @@ export function Benefits() {
 
 export function Testimonials() {
   return (
-    <section id="blog" className="px-5 py-24 sm:px-8">
+    <section id="testimonials" className="px-5 py-24 sm:px-8">
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <SectionHead

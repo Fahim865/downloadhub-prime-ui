@@ -140,10 +140,10 @@ export function Hero() {
 
           <dl className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4">
             {stats.map((s, i) => (
-              <Reveal key={s.label} delay={i * 0.08}>
-                <div className="glass rounded-2xl px-4 py-5 text-center">
+              <Reveal key={s.label} delay={i * 0.08} className="h-full">
+                <div className="glass flex h-full flex-col justify-center rounded-2xl px-3 py-5 text-center">
                   <dt className="sr-only">{s.label}</dt>
-                  <dd className="font-display text-2xl font-semibold sm:text-3xl">
+                  <dd className="font-display text-xl font-semibold sm:text-2xl">
                     <Counter value={s.value} />
                   </dd>
                   <p className="mt-1 text-xs text-muted-foreground">{s.label}</p>
